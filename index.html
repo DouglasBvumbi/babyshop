@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCI Kids Shop - Premium Baby Products</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>NCI Kids Shop</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="pages/admin.html" class="nav-link">Admin</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <div class="cart-icon" onclick="openCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Welcome to NCI Kids Shop</h1>
+                <p class="hero-subtitle">Premium Baby Products for Your Little Ones</p>
+                <p class="hero-description">
+                    Discover our carefully curated collection of safe, high-quality baby products. 
+                    From clothing to toys, we have everything you need for your precious bundle of joy.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('products')">Shop Now</button>
+                    <button class="btn-secondary" href="pages/contact.html">Contact Us</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-placeholder">
+                    <i class="fas fa-baby"></i>
+                    <p>Happy Baby</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safe & Certified</h3>
+                    <p>All products are safety tested and certified for babies</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Quick and secure delivery to your doorstep</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Made with Love</h3>
+                    <p>Carefully selected products for your little ones</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="filter-btn active" onclick="filterProducts('all')">All Products</button>
+                <button class="filter-btn" onclick="filterProducts('clothing')">Clothing</button>
+                <button class="filter-btn" onclick="filterProducts('toys')">Toys</button>
+                <button class="filter-btn" onclick="filterProducts('feeding')">Feeding</button>
+                <button class="filter-btn" onclick="filterProducts('accessories')">Accessories</button>
+                <button class="filter-btn" onclick="filterProducts('bath-care')">Bath & Care</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="closeCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="btn-primary btn-full" onclick="goToCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>NCI Kids Shop</h3>
+                    <p>Your trusted partner for premium baby products. We're committed to providing safe, high-quality items for your little ones.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                        <li><a href="pages/admin.html">Admin</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> info@ncikids.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Baby Street, City, Country</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NCI Kids Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
